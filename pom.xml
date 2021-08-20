@@ -11,6 +11,7 @@
     <modules>
         <module>jlp-core</module>
         <module>jlp-basis</module>
+        <module>jlp-spring-boot</module>
     </modules>
 
     <properties>
