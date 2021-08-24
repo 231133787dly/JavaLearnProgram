@@ -29,4 +29,10 @@ public class UserServiceImpl implements IUserService {
         return userConverter.toUserAccountDTO(userResult);
     }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public User getUserByUsername(String username) {
+        return userRepo.findUserByUsername(username);
+    }
+
 }

@@ -13,6 +13,12 @@ import org.springframework.transaction.annotation.Transactional;
  */
 
 public interface UserRepo extends JpaRepository<User,Long> {
+    /**
+     * 查找用户
+     * @param username 用户名
+     * @return User 查到的用户类
+     */
+    User findUserByUsername(String username);
 
 //    /**
 //     * 新增用户

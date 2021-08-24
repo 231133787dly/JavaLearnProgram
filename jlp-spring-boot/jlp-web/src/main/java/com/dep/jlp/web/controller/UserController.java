@@ -2,13 +2,9 @@ package com.dep.jlp.web.controller;
 
 import com.dep.jlp.core.util.Result;
 import com.dep.jlp.web.common.dto.UserAccountDTO;
-import com.dep.jlp.web.common.entity.User;
 import com.dep.jlp.web.service.IUserService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 /**
@@ -27,4 +23,8 @@ public class UserController {
         return Result.success(userService.insertUser(userAccountDTO));
     }
 
+    @GetMapping("/getUser")
+    public Result getUser(@RequestParam String username) {
+        return Result.success(userService.getUserByUsername(username));
+    }
 }
