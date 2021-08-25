@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  profiles: local
+  datasource:
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.224.224.126:3306/jlp_database?characterEncoding=utf-8&serverTimezone=GMT%2B8
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
