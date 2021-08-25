@@ -4,6 +4,7 @@ import com.dep.jlp.core.util.Result;
 import com.dep.jlp.web.common.dto.UserAccountDTO;
 import com.dep.jlp.web.service.IUserService;
 import lombok.AllArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     IUserService userService;
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/signUp")
     public Result signUp(@RequestBody UserAccountDTO userAccountDTO) {
         return Result.success(userService.insertUser(userAccountDTO));

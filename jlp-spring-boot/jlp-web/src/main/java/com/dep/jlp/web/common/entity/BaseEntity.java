@@ -2,7 +2,9 @@ package com.dep.jlp.web.common.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -24,6 +26,14 @@ public abstract class BaseEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "created_by", nullable = false)
+    @CreatedBy
+    private String createdBy;
+
+    @Column(name = "updated_by", nullable = false)
+    @LastModifiedBy
+    private String updatedBy;
+
     @Column(name = "created_time", nullable = false)
     @CreatedDate
     private LocalDateTime createdTime;
@@ -31,4 +41,6 @@ public abstract class BaseEntity implements Serializable {
     @Column(name = "updated_time", nullable = false)
     @LastModifiedDate
     private LocalDateTime updatedTime;
+
+
 }
