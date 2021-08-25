@@ -12,3 +12,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  security:
+    # 配置默认的 InMemoryUserDetailsManager 的用户账号与密码。
+    user:
+      name: admin # 账号
+      password: admin # 密码$2a$10$EUN7sV6TlAdRzrCrjhNKEeCi3RLhjgDuu0i6Eb0lt576Og4Jzbd.u
+      roles: ADMIN # 拥有角色

@@ -31,7 +31,7 @@ public class WebTest {
     public void insertUser() {
         //模拟前端给值
         Map<String, Object> map = new HashMap<>();
-        map.put("username", "test01");
+        map.put("username", "test03");
         map.put("password", "123456");
 
         //插入user
